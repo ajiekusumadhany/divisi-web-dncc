@@ -14,25 +14,25 @@
 		if($_GET['hal'] == "edit")
 		{
 			//Data akan di edit
-			$edit = mysqli_query($koneksi, "UPDATE tmhs set
+			$edit = mysqli_query($koneksi, "UPDATE jtfederation set
 											 	nama = '$_POST[tnama]',
 												alamat = '$_POST[tras]',
 											 	karakter = '$_POST[tkarakter]'
-												hobi = '$_POST[Thobi]'
+												hobi = '$_POST[thobi]'
 											 WHERE id_anggota = '$_GET[id]'
 										   ");
 			if($edit) //jika edit sukses
 			{
 				echo "<script>
 						alert('Edit data suksess!');
-						document.location='index.php';
+						document.location='gabung.php';
 				     </script>";
 			}
 			else
 			{
 				echo "<script>
 						alert('Edit data GAGAL!!');
-						document.location='index.php';
+						document.location='gabung.php';
 				     </script>";
 			}
 		}
@@ -49,14 +49,14 @@
 			{
 				echo "<script>
 						alert('Simpan data suksess!');
-						document.location='index.php';
+						document.location='gabung.php';
 				     </script>";
 			}
 			else
 			{
 				echo "<script>
 						alert('Simpan data GAGAL!!');
-						document.location='index.php';
+						document.location='gabung.php';
 				     </script>";
 			}
 		}
@@ -91,7 +91,7 @@
 			if($hapus){
 				echo "<script>
 						alert('Hapus Data Suksess!!');
-						document.location='index.php';
+						document.location='gabung.php';
 				     </script>";
 			}
 		}
@@ -184,8 +184,8 @@
 	    		<td><?=$data['karakter']?></td>
 	    		<td><?=$data['hobi']?></td>
 	    		<td>
-	    			<a href="index.php?hal=edit&id=<?=$data['id_anggota']?>" class="btn btn-primary"> Edit </a>
-	    			<a href="index.php?hal=hapus&id=<?=$data['id_anggota']?>" 
+	    			<a href="gabung.php?hal=edit&id=<?=$data['id_anggota']?>" class="btn btn-primary"> Edit </a>
+	    			<a href="gabung.php?hal=hapus&id=<?=$data['id_anggota']?>" 
 	    			   onclick="return confirm('Apakah yakin ingin menghapus data ini?')" class="btn btn-secondary"> Hapus </a>
 	    		</td>
 	    	</tr>
